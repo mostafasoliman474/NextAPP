@@ -25,13 +25,13 @@ const SocialPhoto=[
 const Footer = () => {
   return (
     <div className='flex justify-between items-center h-[50px]'>
-      <div>@ 2023 Kejoodiv . All rights reserved </div>
+      <div className='text-xs'>@ 2023 Kejoodiv . All rights reserved </div>
       <div className='flex gap-5 items-center'>
         {SocialPhoto.map((photo)=>(
           <Image
           src={photo.src}
-          width={20}
-          height={20}
+          width={16}
+          height={16}
           alt={photo.alt}
           className='object-contain cursor-pointer'
         />
