@@ -29,7 +29,7 @@ const Footer = () => {
       <div className='flex gap-5 items-center'>
         {SocialPhoto.map((photo)=>(
           <Image
-          id={photo.id}
+          key={photo.id}
           src={photo.src}
           width={16}
           height={16}

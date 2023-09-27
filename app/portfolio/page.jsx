@@ -25,7 +25,7 @@ const Portfolio = () => {
         <p className="font-semibold text-2xl pb-8">Choose a galary</p>
         <div className="flex gap-9">
           {portfilioCat.map((item)=>(
-            <div className="portfilio_cat">
+            <div className="portfilio_cat" key={item.id}>
               <Image
               src={item.src}
               fill={true}
