@@ -5,7 +5,7 @@ import React from 'react'
 const Contact = () => {
   return (
     <div className='flex flex-col gap-8 items-center'>
-      <h1 className='font-black text-6xl mb-[40px]'>Let's Keep in Touch</h1>
+      <h1 className='font-black text-6xl mb-[40px]'>Let &apos; s Keep in Touch</h1>
       <div className='flex gap-[100px] mb-[50px]'>
 
         <div className='flex-1 relative '>
