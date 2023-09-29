@@ -5,7 +5,7 @@ import React from 'react'
 const Blog = () => {
   return (
     <div className='flex flex-col gap-16 my-8 h-auto' >
-      <Link href='/blog/post' className='flex gap-11 h-[40vh] '>
+      <Link href='/blog/post1' className='flex gap-11 h-[40vh] '>
         <div className='w-[40%] relative'>
           <Image
             fill={true}
@@ -26,7 +26,7 @@ const Blog = () => {
         </div>
       </Link>
 
-      <Link href='/blog/post' className='flex gap-11 h-[40vh] '>
+      <Link href='/blog/post2' className='flex gap-11 h-[40vh] '>
         <div className='w-[40%] relative'>
           <Image
             fill={true}
@@ -48,7 +48,7 @@ const Blog = () => {
       </Link>
 
 
-      <Link href='/blog/post' className='flex gap-11 h-[40vh] '>
+      <Link href='/blog/post3' className='flex gap-11 h-[40vh] '>
         <div className='w-[40%] relative'>
           <Image
             fill={true}
@@ -70,7 +70,7 @@ const Blog = () => {
       </Link>
 
 
-      <Link href='/blog/post' className='flex gap-11 h-[40vh] '>
+      <Link href='/blog/post4' className='flex gap-11 h-[40vh] '>
         <div className='w-[40%] relative'>
           <Image
             fill={true}

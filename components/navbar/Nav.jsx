@@ -1,3 +1,4 @@
+import Toggle from "@components/DarkModeSlider/Toggle"
 import Link from "next/link"
 const links = [
   {
@@ -36,6 +37,7 @@ const Nav = () => {
     <div className="w-full flex justify-between  h-[100px] items-center">
       <Link href='/' className="font-extrabold text-2xl">FATIMA</Link>
       <div className="flex gap-5 items-center">
+        <Toggle/>
         {links.map((link) => (
           <Link href={link.url} key={link.id} className="text-lg font-medium ">{link.title}</Link>
         ))}
