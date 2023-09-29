@@ -56,7 +56,7 @@ body {
 }
 
 .desc {
-  @apply font-normal text-[22px] w-[90%] py-[30px];
+  @apply font-normal text-[20px] w-[90%] py-[10px];
 }
 
 .desc_about {
@@ -64,7 +64,7 @@ body {
 }
 
 .Head_lines {
-  @apply font-extrabold text-2xl mb-2;
+  @apply font-extrabold text-3xl mb-2;
 }
 
 .input {
@@ -98,7 +98,7 @@ body {
 }
 .portfilio_cat:hover{
   transform: scale(1.01);
-  transition: ease 1s;
+  transition: ease 80ms;
 }
 
 @keyframes move {
