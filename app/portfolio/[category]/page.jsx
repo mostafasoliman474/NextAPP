@@ -2,13 +2,13 @@ import Button from '@components/button/Button'
 import Image from 'next/image'
 import React from 'react'
 import { item } from './data'
-
+import notFound from 'next/navigation'
 const getData = (category) => {
   const data = item[category]
   if (data) {
     return data;
   }
-  else return 'PageNotFoundError';
+  else return notFound;
 }
 
 const Category = ({ params }) => {
