@@ -79,6 +79,9 @@ body {
 .input {
   @apply h-[15%] rounded pl-[20px] bg-transparent input_border font-medium text-base;
 }
+.input_form{
+  @apply pl-[10px] min-h-[50px] rounded outline-none text-black
+}
 
 .msg_inp {
 

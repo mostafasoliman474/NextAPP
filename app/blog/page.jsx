@@ -16,31 +16,27 @@ async function getData() {
 
 const Blog = async () => {
   const data = await getData(); 
-  console.log(data[0].img);
+  
   return (
     <div className='flex flex-col gap-16 my-8 h-auto' >
-      <Link href='/blog/post1' className='flex gap-11 h-[40vh] '>
+      {data.map((item)=>(
+        <Link href={`blog/${item._id}`} key={item._id} className='flex gap-11 h-[40vh] '>
         <div className='w-[40%] relative'>
           <Image
             fill={true}
-            src={data[0].img}
+            src={item.img}
             alt='hi'
             className='object-cover rounded '
           />
         </div>
         <div  className='w-[60%] flex flex-col justify-center'>
-          <h1 className='Head_lines '>Woman Posing With A Bunch Of Yellow Flowers</h1>
-          <p className='font-normal text-[20px] w-[90%] py-[10px]'>Woman Posing With A Bunch Of Yellow Flowers
-          Woman Posing With A Bunch Of Yellow Flowers
-          Woman Posing With A Bunch Of Yellow Flowers
-          Woman Posing With A Bunch Of Yellow Flowers
-          Woman Posing With A Bunch Of Yellow Flowers
-          Woman Posing With A Bunch Of Yellow Flowers
-        </p>
+          <h1 className='Head_lines '>{item.title}</h1>
+          <p className='font-normal text-[20px] w-[90%] py-[10px]'>{item.desc}</p>
         </div>
       </Link>
+      ))}
 
-      <Link href='/blog/post2' className='flex gap-11 h-[40vh] '>
+      {/* <Link href='/blog/post2' className='flex gap-11 h-[40vh] '>
         <div className='w-[40%] relative'>
           <Image
             fill={true}
@@ -103,7 +99,7 @@ const Blog = async () => {
           Woman Posing With A Bunch Of Yellow Flowers
         </p>
         </div>
-      </Link>
+      </Link> */}
     </div>
   )
 }
