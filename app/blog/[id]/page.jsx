@@ -1,27 +1,28 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import PostData from '@models/Post'
+// async function getData(id) {
+//   const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+//     cache: "no-store",
+//   });
 
-async function getData(id) {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-    cache: "no-store",
-  });
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
+//   return res.json();
+// }
 export async function generateMetadata({params}){
-  const post =await getData(params.id);
+  const post = await PostData.findById(params.id)
   return{
     title:post.title,
     description: post.desc,
   }
 }
 const Post = async({params}) => {
-  const data=await getData(params.id);
+  // const data=await getData(params.id);
+  const data = await PostData.findById(params.id);
   return (
     <div>
       <div className='w-full flex my-[20px] gap-10'>

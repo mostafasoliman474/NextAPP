@@ -1,23 +1,36 @@
-"use client"
+
+import Post from '@models/Post';
+import connect from '@utils/monogdb'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 
-async function getData() {
-  const res = await fetch("/api/posts", {
-    method: "GET",
-    cache: "no-store",
-  });
+// async function getData() {
+//   const res = await fetch("/api/posts", {
+//     method: "GET",
+//     cache: "no-store",
+//   });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
-const Blog = () => {
-async
+const Blog = async() => {
+  // const [data , setData]= useState([]);
+  // useEffect(async ()=>{
+  //   const response = await getData(); 
+  //   setData(response);
+
+  //   console.log(data);
+
+  // }, []);
+  await connect();
+  const data = await Post.find();
+  // console.log(response)
+  
   return (
     <div className='flex flex-col gap-16 my-8 h-auto' >
       {data.map((item)=>(

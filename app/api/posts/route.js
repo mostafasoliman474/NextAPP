@@ -4,7 +4,7 @@ import { NextResponse } from "next/server"
 
 export const GET = async (request) => {
 
-               console.log("APi Routie")
+              
                //fetching data
                try {
                               await connect();
