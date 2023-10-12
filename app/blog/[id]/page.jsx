@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import PostData from '@models/Post'
+import connect from '@utils/monogdb'
 // async function getData(id) {
 //   const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
 //     cache: "no-store",
@@ -22,6 +23,7 @@ export async function generateMetadata({params}){
 }
 const Post = async({params}) => {
   // const data=await getData(params.id);
+  await connect();
   const data = await PostData.findById(params.id);
   return (
     <div>
