@@ -1,9 +1,11 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 async function getData() {
   const res = await fetch("/api/posts", {
+    method: "GET",
     cache: "no-store",
   });
 
@@ -14,9 +16,8 @@ async function getData() {
   return res.json();
 }
 
-const Blog = async () => {
-  const data = await getData(); 
-  
+const Blog = () => {
+async
   return (
     <div className='flex flex-col gap-16 my-8 h-auto' >
       {data.map((item)=>(
