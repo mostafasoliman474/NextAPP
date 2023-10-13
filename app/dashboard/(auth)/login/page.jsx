@@ -1,5 +1,6 @@
 'use client'
 import { signIn, useSession } from 'next-auth/react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
@@ -35,7 +36,8 @@ const Login = () => {
   
         <button className='bg-[#53c28b] text-white rounded h-[50px]'>Log In</button>
       </form>
-      <button onClick={()=>signIn("google")}>click to log in</button>
+      <button onClick={()=>signIn("google")} className='bg-white rounded p-2 text-black'>Log in Google</button>
+      <Link href='/dashboard/register'>Create New Account?</Link>
     </div>
   )
 }
