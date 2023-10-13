@@ -1,5 +1,9 @@
+'use client'
 import Toggle from "@components/DarkModeSlider/Toggle"
+import Button from "@components/button/Button"
+import { signOut, useSession } from "next-auth/react"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 const links = [
   {
     id: 1,
@@ -33,17 +37,30 @@ const links = [
   },
 ]
 const Nav = () => {
+  const [authontication, setAuthontication] = useState(null)
+  const session =useSession();
+  console.log(session)
+  // useEffect(()=>{
+  //   // const session =useSession();
+  //   setAuthontication(session.status)
+  // },[])
+  // console.log(authontication)
   return (
-    <div className="w-full flex justify-between  h-[100px] items-center">
+    <nav className="w-full flex justify-between  h-[100px] items-center">
       <Link href='/' className="font-extrabold text-2xl">FATIMA</Link>
+      {/* desktop view */}
       <div className="flex gap-5 items-center">
         <Toggle/>
         {links.map((link) => (
           <Link href={link.url} key={link.id} className="text-lg font-medium ">{link.title}</Link>
         ))}
-        <button type="button" className="Green_btn">Log Out</button>
+        {session.status==="authenticated"?(
+          <button className="Green_btn" onClick={signOut}>Log Out</button>
+        ):(
+          <Button className="Green_btn" url='dashboard/login' text='Sign In'/>
+        )}
       </div>
-    </div>
+    </nav>
   )
 }
 

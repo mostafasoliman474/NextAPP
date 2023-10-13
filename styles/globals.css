@@ -49,8 +49,37 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.popUpmenu{
+  height: 400px;
+  width: 50%;
+  box-shadow: 0 0 500px 400px rgba(0,0,0,.3);
+  background: #1f1f1f;
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 20px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  top:0;
+  bottom: 0;
+  
+  transition: ease 1s all;
+}
+.popUpmenuInput{
+  @apply w-[80%] pl-2 h-[50px] bg-transparent text-white outline-none border-[lightgray] border-[1px] rounded ;
+}
+
 .Green_btn {
   @apply p-[10px_20px] border-[none] bg-[#53c28b] text-white font-semibold text-base rounded cursor-pointer w-[30%] text-center;
+}
+
+.Red_btn {
+  @apply p-[10px_20px] border-[none] bg-[#cf1212a2] text-white font-semibold text-base rounded cursor-pointer w-[30%] text-center;
 }
 
 .Green_btn_works {

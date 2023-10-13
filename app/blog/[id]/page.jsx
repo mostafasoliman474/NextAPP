@@ -14,13 +14,13 @@ import connect from '@utils/monogdb'
 
 //   return res.json();
 // }
-export async function generateMetadata({params}){
-  const post = await PostData.findById(params.id)
-  return{
-    title:post.title,
-    description: post.desc,
-  }
-}
+// export async function generateMetadata({params}){
+//   const post = await PostData.findById(params.id)
+//   return{
+//     title:post.title,
+//     description: post.desc,
+//   }
+// }
 const Post = async({params}) => {
   // const data=await getData(params.id);
   await connect();
