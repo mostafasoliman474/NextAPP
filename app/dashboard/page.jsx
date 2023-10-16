@@ -32,6 +32,7 @@ const Dashboard = () => {
           img,
           content,
           username: session.data.user.name,
+          profileImg:'https://images.pexels.com/photos/3541390/pexels-photo-3541390.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
         }),
       });
       // e.target.reset();
@@ -72,10 +73,10 @@ const Dashboard = () => {
         <button className='p-[10px_20px] border-[none] bg-[#53c28b]
          text-white font-semibold text-base rounded cursor-pointer  text-center'
           onClick={() => setToggle((prev) => !prev)}>Create Post </button>
-        <div className='flex flex-col gap-[50px]'>
+        <div className='flex flex-col gap-[50px] w-full'>
           {isLoading ? "loading" : data.map((post) => (
             <Link href={'/blog'} className='flex gap-11 h-[40vh]' key={post._id}>
-              <div className='w-[40%] relative'>
+              <div className='w-[50%] relative'>
                 <Image
                   fill={true}
                   src={post.img}
