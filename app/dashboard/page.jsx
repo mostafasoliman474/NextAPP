@@ -92,9 +92,9 @@ const Dashboard = () => {
           onClick={() => setToggle((prev) => !prev)}>Create Post </button>
         <div className='flex flex-col gap-[50px] w-full'>
           {isLoading ? "loading" : data.map((post) => (
-            <div>
+            <div key={post._id}>
             <p className='absolute font-semibold text-[30px] right-0 cursor-pointer z-50' onClick={()=>handelDelete(post._id)}>x</p>
-            <Link href={`/blog/${post._id}`} className='flex gap-11 h-[40vh] relative' key={post._id}>
+            <Link href={`/blog/${post._id}`} className='flex gap-11 h-[40vh] relative' >
               <div className='w-[50%] relative'>
                 <Image
                   fill={true}
