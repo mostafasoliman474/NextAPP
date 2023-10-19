@@ -29,6 +29,7 @@ const Blog = async() => {
   await connect();
   const data = await Post.find();
   // console.log(response)
+  console.log(data)
   
   return (
     <div className='flex flex-col gap-16 my-8 h-auto' >
