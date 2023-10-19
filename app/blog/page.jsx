@@ -1,4 +1,3 @@
-
 import Post from '@models/Post';
 import connect from '@utils/monogdb'
 import Image from 'next/image'
