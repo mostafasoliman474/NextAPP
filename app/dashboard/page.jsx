@@ -14,7 +14,7 @@ const Dashboard = () => {
   const { data, mutate,error, isLoading } = useSWR(
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher);
-    console.log(data)
+    // console.log(data)
   const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -1,36 +1,36 @@
-import Post from '@models/Post';
-import connect from '@utils/monogdb'
+
+// import Post from '@models/Post';
+// import connect from '@utils/monogdb'
 import Image from 'next/image'
 import Link from 'next/link'
 // import React, { useEffect, useState } from 'react'
 
-// async function getData() {
-//   const res = await fetch("/api/posts", {
-//     method: "GET",
-//     cache: "",
-//   });
+async function getData() {
+  const res = await fetch(`${process.env.API_URL}/api/posts`, {
+    method: "GET",
+    cache: "no-cache",
+  });
 
-//   if (!res.ok) {
-//     throw new Error("Failed to fetch data");
-//   }
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
 
-//   return res.json();
-// }
+  return res.json();
+}
 
 const Blog = async() => {
   // const [data , setData]= useState([]);
   // useEffect(async ()=>{
   //   const response = await getData(); 
   //   setData(response);
-
-  //   // console.log(data);
-
   // }, []);
-  await connect();
-  const data = await Post.find();
-  // console.log(response)
+  const data = await getData(); 
+  console.log(data);
+  // await connect();
+  // const data = await Post.find();
+  // console.log(data)
  
-  console.log(data[data.length-1])
+  
   
   return (
     <div className='flex flex-col gap-16 my-8 h-auto' >
