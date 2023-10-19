@@ -7,7 +7,7 @@ import Link from 'next/link'
 // async function getData() {
 //   const res = await fetch("/api/posts", {
 //     method: "GET",
-//     cache: "no-store",
+//     cache: "",
 //   });
 
 //   if (!res.ok) {
@@ -23,10 +23,10 @@ const Blog = async() => {
   //   const response = await getData(); 
   //   setData(response);
 
-  //   console.log(data);
+  //   // console.log(data);
 
   // }, []);
-  await connect();
+  // await connect();
   const data = await Post.find();
   // console.log(response)
  

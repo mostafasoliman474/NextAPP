@@ -36,6 +36,8 @@ const Dashboard = () => {
           profileImg:'https://images.pexels.com/photos/3541390/pexels-photo-3541390.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
         }),
       });
+
+      router.refresh();
       // e.target.reset();
     } catch (err) {
       console.log(err)
@@ -51,6 +53,7 @@ const Dashboard = () => {
       }
       )
       mutate();
+      router.refresh();
     } catch (error) {
       console.log(error)
     }
