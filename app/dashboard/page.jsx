@@ -1,5 +1,4 @@
 'use client'
-
 import { useSession } from 'next-auth/react'
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,7 +11,7 @@ const Dashboard = () => {
 
   const session = useSession();
   const fetcher = (...args) => fetch(...args).then(res => res.json());
-  const { data, error, isLoading } = useSWR(
+  const { data, mutate,error, isLoading } = useSWR(
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher);
     console.log(data)
@@ -23,6 +22,8 @@ const Dashboard = () => {
     const desc = e.target[1].value;
     const img = e.target[2].value;
     const content = e.target[3].value;
+    
+
     try {
       await fetch("/api/posts", {
         method: "POST",
@@ -36,11 +37,27 @@ const Dashboard = () => {
         }),
       });
       // e.target.reset();
-
     } catch (err) {
       console.log(err)
     }
+    setToggle(false)
   };
+  const handelDelete=async(id)=>{
+    try {
+      await fetch(`api/posts/${id}`,
+      {
+        method:'DELETE',
+
+      }
+      )
+      mutate();
+    } catch (error) {
+      console.log(error)
+    }
+    
+    
+    
+  }
   if (session.status === 'loading') {
     return <p>loading</p>
   }
@@ -59,10 +76,10 @@ const Dashboard = () => {
 
             <form className='popUpmenu' onSubmit={handleSubmit}>
 
-              <input type='text' placeholder='Title' className='popUpmenuInput' />
-              <input type='text' placeholder='Description' className='popUpmenuInput' />
-              <input type='text' placeholder='Image source' className='popUpmenuInput' />
-              <textarea className='overflow-hidden bg-transparent h-[100px]  p-[10px] border-[1px] w-[80%] text-white' placeholder='What do you think!'></textarea>
+              <input type='text' placeholder='Title' className='popUpmenuInput'  required/>
+              <input type='text' placeholder='Description' className='popUpmenuInput' required/>
+              <input type='text' placeholder='Image source' className='popUpmenuInput' required/>
+              <textarea className='overflow-hidden bg-transparent h-[100px]  p-[10px] border-[1px] w-[80%] text-white' placeholder='What do you think!' required></textarea>
               <button className='Green_btn'>Post</button>
 
             </form>
@@ -75,7 +92,9 @@ const Dashboard = () => {
           onClick={() => setToggle((prev) => !prev)}>Create Post </button>
         <div className='flex flex-col gap-[50px] w-full'>
           {isLoading ? "loading" : data.map((post) => (
-            <Link href={'/blog'} className='flex gap-11 h-[40vh]' key={post._id}>
+            <div>
+            <p className='absolute font-semibold text-[30px] right-0 cursor-pointer z-50' onClick={()=>handelDelete(post._id)}>x</p>
+            <Link href={`/blog/${post._id}`} className='flex gap-11 h-[40vh] relative' key={post._id}>
               <div className='w-[50%] relative'>
                 <Image
                   fill={true}
@@ -90,7 +109,10 @@ const Dashboard = () => {
                   {post.desc}
                 </p>
               </div>
+              
             </Link>
+            
+            </div>
           ))}
         </div>
       </div>
