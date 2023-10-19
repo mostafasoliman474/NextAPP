@@ -37,7 +37,7 @@ const Dashboard = () => {
         }),
       });
 
-      router.refresh();
+      
       // e.target.reset();
     } catch (err) {
       console.log(err)
@@ -52,8 +52,7 @@ const Dashboard = () => {
 
       }
       )
-      mutate();
-      router.refresh();
+      mutate();      
     } catch (error) {
       console.log(error)
     }
