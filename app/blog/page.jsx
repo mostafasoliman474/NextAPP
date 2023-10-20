@@ -25,7 +25,7 @@ const Blog = async() => {
   //   setData(response);
   // }, []);
   const data = await getData(); 
-  // console.log(data);
+  console.log(data);
   // await connect();
   // const data = await Post.find();
   // console.log(data)
@@ -35,12 +35,10 @@ const Blog = async() => {
   return (
     <div className='flex flex-col gap-16 my-8 h-auto' >
       {data.map((item)=>(
-        <Link href={`blog/${item._id}`} key={item._id} className='flex gap-11 h-[40vh]  '>
-        <div className='w-[40%] relative '>
+        <Link href={`blog/${item._id}`} key={item._id} className='flex gap-11 h-[40vh] '>
+        <div className='w-[40%] relative'>
           <Image
             fill={true}
-            // width={400}
-            // height={200}
             src={item.img}
             alt='hi'
             className='object-cover rounded '

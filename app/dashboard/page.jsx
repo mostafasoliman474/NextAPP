@@ -67,7 +67,7 @@ const Dashboard = () => {
     router.push('/dashboard/login')
   }
 
-  // console.log(session)
+  console.log(session)
   if (session.status === 'authenticated') {
     return (
 
@@ -81,7 +81,7 @@ const Dashboard = () => {
               <input type='text' placeholder='Title' className='popUpmenuInput'  required/>
               <input type='text' placeholder='Description' className='popUpmenuInput' required/>
               <input type='text' placeholder='Image source' className='popUpmenuInput' required/>
-              <textarea className='overflow-hidden bg-transparent h-[100px]  p-[10px] border-[1px] w-[80%] text-white ' placeholder='What do you think!' required></textarea>
+              <textarea className='overflow-hidden bg-transparent h-[100px]  p-[10px] border-[1px] w-[80%] text-white' placeholder='What do you think!' required></textarea>
               <button className='Green_btn'>Post</button>
 
             </form>
