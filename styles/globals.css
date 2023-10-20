@@ -30,13 +30,14 @@ body {
 }
 
 .container {
-  max-width: 1366;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 0 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    /* max-width: 1366; */
+    /* min-height: 100vh; */
+    /* margin: 0 auto; */
+    
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  @apply flex sm:px-[60px] px-[20px] justify-between flex-col max-w-[1366px] min-h-[100vh] m-[0_auto];
 }
 
 .Head {
@@ -149,7 +150,7 @@ body {
   }
 } */
 .portfilio_cat{
-  @apply h-[50vh] w-[250px] relative cursor-pointer border-[5px] border-white rounded;
+  @apply h-[50vh] sm:w-[250px] relative cursor-pointer border-[5px] border-white rounded w-[100%];
 }
 .portfilio_cat:hover{
   transform: scale(1.01);
