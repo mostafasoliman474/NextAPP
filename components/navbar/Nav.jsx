@@ -80,16 +80,16 @@ const Nav = () => {
         
       </div>
       {/* {popToggle&& ( */}
-          <div className={`${mode==='light'?'dark':'light'} ${popToggle===true?'w-[100%]':'w-[0]'} popsideMenu `} onClick={()=>setpopToggle((priv)=>!priv)}>
+          <div className={`${mode==='light'?'dark':'light'} ${popToggle===true?'w-[100%]':'w-[0]'} popsideMenu `}>
             <p className="text-[20px] p-3" onClick={()=>setpopToggle((priv)=>!priv)}>x</p>
             
             {links.map((link) => (
               <Link href={link.url} key={link.id} className="text-lg font-medium " onClick={()=>setpopToggle((priv)=>!priv)}>{link.title}</Link>
             ))}
             {session.status==="authenticated"?(
-              <button className="Green_btn" >Log Out</button>
+              <button className="Green_btn" onClick={signOut}>Log Out</button>
             ):(
-              <Button className="Green_btn" url='/dashboard/register' text='Sign Up' />
+              <Button className="Green_btn" url='/dashboard/register' text='Sign Up' onClick={()=>setpopToggle((priv)=>!priv)}/>
             )}
             <Toggle/>
           </div>
