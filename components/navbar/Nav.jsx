@@ -80,7 +80,7 @@ const Nav = () => {
         
       </div>
       {/* {popToggle&& ( */}
-          <div className={`${mode==='light'?'dark':'light'} ${popToggle===true?'w-[350px]':'w-[0]'} popsideMenu `}>
+          <div className={`${mode==='light'?'dark':'light'} ${popToggle===true?'w-[100%]':'w-[0]'} popsideMenu `}>
             <p className="text-[20px] p-3" onClick={()=>setpopToggle((priv)=>!priv)}>x</p>
             
             {links.map((link) => (
