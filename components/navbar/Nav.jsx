@@ -71,6 +71,7 @@ const Nav = () => {
         width={30}
         src='https://images.pexels.com/photos/18629365/pexels-photo-18629365/free-photo-of-yawning-lion-in-the-savannah.jpeg'
         className="object-contain rounded-[50%] cursor-pointer"
+        alt="profile image"
         onClick={()=>setpopToggle((priv)=>!priv)}
         />
         

@@ -35,19 +35,19 @@ const Blog = async() => {
     <div className='flex flex-col gap-16 my-8 h-auto' >
       {data.map((item)=>(
         <Link href={`blog/${item._id}`} key={item._id} className='flex gap-11 sm:h-[40vh] sm:flex-row flex-col '>
-        <div className='sm:w-[40%] sm:relative w-[100%] h-[300px] '>
+        <div className='sm:w-[40%] sm:relative '>
           <Image
-            
-            width={400}
-            height={200}
+            fill={true}
+            // width={400}
+            // height={200}
             src={item.img}
             alt='hi'
-            className='object-cover rounded relative h-[100%] w-[100%]'
+            className='object-cover rounded '
           />
         </div>
         <div  className='sm:w-[60%] flex flex-col justify-center'>
           <h1 className='Head_lines '>{item.title}</h1>
-          <p className='font-normal text-[20px] sm:w-[90%] py-[10px]'>{item.desc}</p>
+          <p className='font-normal text-[20px] w-[90%] py-[10px]'>{item.desc}</p>
         </div>
       </Link>
       ))}
