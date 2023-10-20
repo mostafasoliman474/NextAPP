@@ -41,7 +41,7 @@ const Nav = () => {
   const [popToggle, setpopToggle] = useState(false);
   // const [authontication, setAuthontication] = useState(null)
   const session =useSession();
-  console.log(session)
+  // console.log(session)
   // useEffect(()=>{
   //   // const session =useSession();
   //   setAuthontication(session.status)
@@ -50,7 +50,7 @@ const Nav = () => {
  
   return (
     <nav className="w-full flex justify-between  h-[100px] items-center">
-      <Link href='/' className="font-extrabold text-2xl">ASBUILT</Link>
+      <Link href='/' className="font-extrabold text-2xl">FATIMA</Link>
       {/* desktop view */}
       <div className="sm:flex gap-5 items-center hidden">
         <Toggle/>
@@ -71,7 +71,6 @@ const Nav = () => {
         width={30}
         src='https://images.pexels.com/photos/18629365/pexels-photo-18629365/free-photo-of-yawning-lion-in-the-savannah.jpeg'
         className="object-contain rounded-[50%] cursor-pointer"
-        alt="profile image"
         onClick={()=>setpopToggle((priv)=>!priv)}
         />
         

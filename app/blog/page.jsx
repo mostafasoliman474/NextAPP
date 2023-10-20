@@ -25,6 +25,7 @@ const Blog = async() => {
   //   setData(response);
   // }, []);
   const data = await getData(); 
+  // console.log(data);
   // await connect();
   // const data = await Post.find();
   // console.log(data)

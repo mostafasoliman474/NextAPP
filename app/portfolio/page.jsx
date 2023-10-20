@@ -23,7 +23,7 @@ const Portfolio = () => {
     <div className="flex flex-col gap-10">
       <div>
         <p className="font-semibold text-2xl pb-8">Choose a galary</p>
-        <div className="flex gap-9 flex-col sm:flex-row items-center">
+        <div className="flex gap-9">
           {portfilioCat.map((item) => (
             <Link href={`/portfolio/${item.alt}`} className="portfilio_cat" key={item.id}>
               <Image
