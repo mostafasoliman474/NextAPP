@@ -1,10 +1,12 @@
 'use client'
 import Toggle from "@components/DarkModeSlider/Toggle"
 import Button from "@components/button/Button"
+import { ThemeContext } from "@context/ThemeContext"
+
 import { signOut, useSession } from "next-auth/react"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 const links = [
   {
     id: 1,
@@ -38,6 +40,7 @@ const links = [
   },
 ]
 const Nav = () => {
+  const {mode}=useContext(ThemeContext)
   const [popToggle, setpopToggle] = useState(false);
   // const [authontication, setAuthontication] = useState(null)
   const session =useSession();
@@ -65,27 +68,32 @@ const Nav = () => {
       </div>
 
       {/* mobile view */}
-      <div className="flex sm:hidden ">
+      <div className="flex sm:hidden rounded-[100%] cursor-pointer w-8 h-8 relative" onClick={()=>setpopToggle((priv)=>!priv)}>
         <Image
-        height={25}
-        width={30}
+        fill={true}
         src='https://images.pexels.com/photos/18629365/pexels-photo-18629365/free-photo-of-yawning-lion-in-the-savannah.jpeg'
-        className="object-contain rounded-[50%] cursor-pointer"
+        className="object-cover absolute rounded-[50%]"
         alt="profile image"
-        onClick={()=>setpopToggle((priv)=>!priv)}
+        
         />
         
         
       </div>
-      {popToggle&& (
-          <div className="flex flex-col fixed h-full w-[50%] right-0 top-0 items-center z-50 pt-[20px] gap-5 ">
+      {/* {popToggle&& ( */}
+          <div className={`${mode==='light'?'dark':'light'} ${popToggle===true?'w-[350px]':'w-[0]'} popsideMenu `}>
+            <p className="text-[20px] p-3" onClick={()=>setpopToggle((priv)=>!priv)}>x</p>
             
             {links.map((link) => (
               <Link href={link.url} key={link.id} className="text-lg font-medium " onClick={()=>setpopToggle((priv)=>!priv)}>{link.title}</Link>
             ))}
+            {session.status==="authenticated"?(
+              <button className="Green_btn" onClick={signOut}>Log Out</button>
+            ):(
+              <Button className="Green_btn" url='/dashboard/register' text='Sign Up'/>
+            )}
             <Toggle/>
           </div>
-        )}
+        {/* // )} */}
     </nav>
   )
 }
