@@ -45,9 +45,9 @@ const Blog = async() => {
             className='object-cover rounded relative h-[100%] w-[100%]'
           />
         </div>
-        <div  className='w-[60%] flex flex-col justify-center'>
+        <div  className='sm:w-[60%] flex flex-col justify-center'>
           <h1 className='Head_lines '>{item.title}</h1>
-          <p className='font-normal text-[20px] w-[90%] py-[10px]'>{item.desc}</p>
+          <p className='font-normal text-[20px] sm:w-[90%] py-[10px]'>{item.desc}</p>
         </div>
       </Link>
       ))}

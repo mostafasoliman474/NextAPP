@@ -30,13 +30,14 @@ body {
 }
 
 .container {
-  max-width: 1366;
+  /* max-width: 1366;
   min-height: 100vh;
   margin: 0 auto;
   padding: 0 60px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
+  @apply flex sm:px-[60px] px-[20px] justify-between flex-col max-w-[1366px] min-h-[100vh] m-[0_auto];
 }
 
 .Head {
