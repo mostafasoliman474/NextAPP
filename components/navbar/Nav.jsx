@@ -41,7 +41,7 @@ const Nav = () => {
   const [popToggle, setpopToggle] = useState(false);
   // const [authontication, setAuthontication] = useState(null)
   const session =useSession();
-  // console.log(session)
+  console.log(session)
   // useEffect(()=>{
   //   // const session =useSession();
   //   setAuthontication(session.status)
