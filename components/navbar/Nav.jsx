@@ -89,7 +89,10 @@ const Nav = () => {
             {session.status==="authenticated"?(
               <button className="Green_btn" onClick={signOut}>Log Out</button>
             ):(
-              <Button className="Green_btn" url='/dashboard/register' text='Sign Up' onClick={()=>setpopToggle((priv)=>!priv)}/>
+              <div onClick={()=>setpopToggle((priv)=>!priv)}>
+
+              <Button className="Green_btn" url='/dashboard/register' text='Sign Up' />
+              </div>
             )}
             <Toggle/>
           </div>
