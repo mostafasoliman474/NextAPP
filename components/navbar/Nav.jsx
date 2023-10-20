@@ -78,7 +78,7 @@ const Nav = () => {
         
       </div>
       {popToggle&& (
-          <div className="flex flex-col fixed h-full w-[50%] right-0 bg-white top-0 items-center z-50 pt-[20px] gap-5 ">
+          <div className="flex flex-col fixed h-full w-[50%] right-0 top-0 items-center z-50 pt-[20px] gap-5 ">
             
             {links.map((link) => (
               <Link href={link.url} key={link.id} className="text-lg font-medium " onClick={()=>setpopToggle((priv)=>!priv)}>{link.title}</Link>

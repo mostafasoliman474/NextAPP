@@ -150,7 +150,7 @@ body {
   }
 } */
 .portfilio_cat{
-  @apply h-[50vh] w-[250px] relative cursor-pointer border-[5px] border-white rounded;
+  @apply h-[50vh] sm:w-[250px] w-[100%] relative cursor-pointer border-[5px] border-white rounded;
 }
 .portfilio_cat:hover{
   transform: scale(1.01);
