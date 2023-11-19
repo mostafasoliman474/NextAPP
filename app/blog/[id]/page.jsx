@@ -27,14 +27,15 @@ const Post = async({params}) => {
   const data = await PostData.findById(params.id);
   return (
     <div>
-      <div className='w-full flex my-[20px] gap-10'>
+      <div className='w-full flex my-[20px] gap-10 sm:flex-row flex-col'>
         <div className='flex-1'>
           <h1 className='Head_lines leading-7'>{data.title}</h1>
           <p className='font-normal text-[16px] mt-[40px] mb-[30px] leading-7'>{data.desc}</p>
           <Link href='./' className='flex items-center'>
             <span className='rounded-[100%] overflow-hidden relative w-[25px] h-[25px] mr-2 avatarBorder'>
               <Image
-              fill={true}
+              width={400}
+              height={200}
               src={data.profileImg}
               alt='profile picture'
               className='object-cover'
@@ -43,12 +44,13 @@ const Post = async({params}) => {
             <sapn className='hover:underline font-extrabold hover:text-white text-[14px]' >{data.username}</sapn>
           </Link>
         </div>
-        <div className='flex-1 relative'>
+        <div className='sm:w-[40%] sm:relative w-[100%] h-[300px]'>
         <Image
-            fill={true}
+            width={400}
+            height={200}
             src={data.img}
             alt='hi'
-            className='object-cover rounded '
+            className='object-cover rounded relative h-[100%] w-[100%]'
           />
         </div>
       </div>
