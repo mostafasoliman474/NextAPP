@@ -76,7 +76,7 @@ body {
 }
 
 .Green_btn {
-  @apply p-[10px_10px] border-[none] bg-[#53c28b] text-white font-semibold text-base rounded cursor-pointer w-[30%] text-center;
+  @apply p-[10px_10px] border-[none] bg-[#53c28b] text-white font-semibold text-base rounded cursor-pointer w-[35%] text-center;
 }
 
 .Red_btn {
